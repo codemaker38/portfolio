@@ -32,6 +32,7 @@ jobs:
       - name: Build PayloadCMS
         run: pnpm run build
         env:
+          DATABASE_URI: ${{ secrets.DATABASE_URI }}
           PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
 
       # 2. Configure AWS credentials
