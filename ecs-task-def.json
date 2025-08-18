@@ -1,0 +1,26 @@
+{
+    "family": "payloadcms-task",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::197876517957:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+      {
+        "name": "payloadcms",
+        "image": "197876517957.dkr.ecr.ap-southeast-1.amazonaws.com/payloadcms-repo",
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ],
+        "environment": [
+          { "name": "DATABASE_URI", "value": "postgres://postgres:fN6t64J3PU35cUb4J1bL@payloadcms-db.c9q4kwqiuwzf.ap-southeast-1.rds.amazonaws.com:5432/portfolio" },
+          { "name": "PAYLOAD_SECRET", "value": "a3300dc3ddb212aa31bcbe684a6fa3de167aa96704c78c165af4999adddd578f3f9d480e898fe3d5b56beb741d2992e2" }
+        ]
+      }
+    ],
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "512",
+    "memory": "1024"
+  }
+  
