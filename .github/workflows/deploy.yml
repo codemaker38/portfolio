@@ -11,8 +11,23 @@ jobs:
 
     steps:
       # 1. Checkout repo
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Enable pnpm
+        run: corepack enable pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build PayloadCMS
+        run: pnpm run build
 
       # 2. Configure AWS credentials
       - name: Configure AWS credentials
