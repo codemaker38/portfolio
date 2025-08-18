@@ -14,7 +14,7 @@
           }
         ],
         "environment": [
-          { "name": "DATABASE_URI", "value": "postgres://postgres:fN6t64J3PU35cUb4J1bL@payloadcms-db.c9q4kwqiuwzf.ap-southeast-1.rds.amazonaws.com:5432/portfolio" },
+          { "name": "DATABASE_URI", "value": "postgres://postgres:fN6t64J3PU35cUb4J1bL@payloadcms-db.c9q4kwqiuwzf.ap-southeast-1.rds.amazonaws.com:5432/portfolio?sslmode=require" },
           { "name": "PAYLOAD_SECRET", "value": "a3300dc3ddb212aa31bcbe684a6fa3de167aa96704c78c165af4999adddd578f3f9d480e898fe3d5b56beb741d2992e2" }
         ]
       }
