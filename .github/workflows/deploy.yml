@@ -31,6 +31,8 @@ jobs:
 
       - name: Build PayloadCMS
         run: pnpm run build
+        env:
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
 
       # 2. Configure AWS credentials
       - name: Configure AWS credentials
