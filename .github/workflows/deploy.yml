@@ -34,6 +34,7 @@ jobs:
         env:
           DATABASE_URI: ${{ secrets.DATABASE_URI }}
           PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+          SKIP_DB: true
 
       # 2. Configure AWS credentials
       - name: Configure AWS credentials
